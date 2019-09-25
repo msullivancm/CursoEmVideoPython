@@ -1,0 +1,5 @@
+tabela=('Flamengo','Palmeiras','Santos','Internacional','Corinthians','São Paulo','Bahia','Grêmio','Atlético-MG','Botafogo','Athletico-PR','Vasco','Ceará','Fortaleza','Goiás','Fluminense','Cruzeiro','CSA','Chapecoense','Avaí')
+print(f'5 primeiros colocados {tabela[0:5]}')
+print(f'Ultimos 4 colocados {tabela[-4:]}')
+print(f'Lista em ordem alfabética: {sorted(tabela)}')
+print('Chapecoence está na posição {}o'.format(tabela.index('Chapecoense')-1))
