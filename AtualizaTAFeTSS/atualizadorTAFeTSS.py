@@ -1,6 +1,8 @@
 '''
 O que este programa se propõe:
  Baixar pacotes de atualização via Scraping;
+	Lembrando que os patchs devem ser baixados com data superior a do rpo;
+	Os dicionários devem ser baixados com data superior ao dicionário completo/diferencial da release;
  Descompactar arquivos baixados;
  Parar os serviços do TAF WS, TAF, DBAccess, TSS e DBAccess do TSS;
  Sobrepor o conteúdo dos arquivos baixados e descompactados para seus respectivos diretórios no TAF e TSS;
