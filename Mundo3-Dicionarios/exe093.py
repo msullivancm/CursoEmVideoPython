@@ -7,6 +7,7 @@ for j in range(0, partidas):
     jogador['gols'].append(int(input(f'Quantos gols na partida {j}? ')))
     tot += jogador['gols'][j]
 jogador['total'] = tot
+#jogador['total'] = sum(jogador['gols']) #o sum soma todos os valores do vetor
 print('=-'*20)
 print(jogador)
 print('=-'*20)

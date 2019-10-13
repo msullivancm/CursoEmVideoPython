@@ -1,24 +1,42 @@
-#jogadores = [{'nome': 'Joelson', 'gols': [3, 2], 'total': 5}, {'nome': 'Pedrão', 'gols': [2, 0, 4], 'total': 6}, {'nome': 'Wesley', 'gols': [0, 0, 0, 0], 'total': 0}]
-jogador=dict()
-jogadores=list()
-continua = 's'
-while continua != 'n':
-    jogador['nome']= input('Nome do Jogador: ')
-    partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
-    jogador['gols'] = list()
-    tot = 0
-    for j in range(0, partidas):
-        jogador['gols'].append(int(input(f'Quantos gols na partida {j}? ')))
-        tot += jogador['gols'][j]
-    jogador['total'] = tot
-    jogadores.append(jogador.copy())
-    continua = input('Quer continuar? [S/N]').lower()
+jogador = dict()
+jogadores = list()
+while True:
+    teste = input('Teste ou a Vera? [T/V]').upper()
+    if teste in 'TV':
+        break
+    print('Digite apenas T ou V.')
+if teste == 'T':
+    jogadores = [{'nome': 'Joelson', 'gols': [3, 2], 'total': 5}, {'nome': 'Pedrão', 'gols': [2, 0, 4], 'total': 6}, {'nome': 'Wesley', 'gols': [0, 0, 0, 0], 'total': 0}]
+else:
+    continua = 's'
+    while continua != 'n':
+        jogador['nome']= input('Nome do Jogador: ')
+        partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
+        jogador['gols'] = list()
+        tot = 0
+        for j in range(0, partidas):
+            jogador['gols'].append(int(input(f'Quantos gols na partida {j}? ')))
+            tot += jogador['gols'][j]
+        jogador['total'] = tot
+        jogadores.append(jogador.copy())
+        while True:
+            continua = input('Quer continuar? [S/N]').lower()
+            if continua in 'sn':
+                break
+            print('Digite apenas S ou N.')
 print('=-'*20)
 print(jogadores)
-print('{:>3} {:<10} {:<20} {:<20}'.format('Cod', 'Nome', 'Gols', 'Total'))
-print('-'*42)
+#Cabeçalho
+print('cod ', end=' ')
+for j in jogadores[0].keys():
+    print(f'{j:<15}', end=' ')
+print()
+#Dados
 for i, j in enumerate(jogadores):
-    print('{:>3} {:<10} {:<20} {:<20}'.format(i, j['nome'], str(j['gols']), str(j['total'])))
+    print(f'{i:>3} ', end=' ')
+    for d in j.values():
+        print(f'{str(d):<15} ', end=' ')
+    print()
 mostrar = 's'
 while mostrar != 'n':
     jog= int(input(f'Mostrar dados de qual jogador? (999 para finalizar)'))

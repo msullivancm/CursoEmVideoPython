@@ -1,8 +1,11 @@
 aluno = dict()
 aluno['nome'] = input('Nome: ')
 aluno['media'] = float(input(f'Média de {aluno["nome"]}: '))
-print(f'Média é igual a {aluno["media"]}')
-if aluno['media']>=5.0:
-    print('Situação é igual a Aprovado')
+if aluno['media']>=7.0:
+    aluno['situcao'] = 'Aprovado'
+elif 5.0 <= aluno['media'] < 7.0:
+    aluno['situcao'] = 'Recuperação'
 else:
-    print('Situação é igual a Reprovado')
+    aluno['situcao'] = 'Reprovado'
+for k, v in aluno.items():
+    print(f'    -{k} é igual a {v}')
