@@ -1,14 +1,14 @@
 from time import sleep
 def conta(ini, fim, passo):
-    print(f'Contagem de {ini} até {fim} de {passo} em {passo}')
     if passo < 0:
-        passo = passo * -1
+        passo *= -1
     elif passo == 0:
         passo = 1
+    print(f'Contagem de {ini} até {fim} de {passo} em {passo}')
     if ini > fim:
-        passo = passo * -1
+        passo *= -1
     for i in range(ini, fim, passo):
-        print(f'{i}', end=' ')
+        print(f'{i}', end=' ', flush=True)
         sleep(1)
     print(f'{fim} FIM!')
 

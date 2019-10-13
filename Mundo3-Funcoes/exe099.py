@@ -19,6 +19,8 @@ def linha():
 
 
 linha()
+maior(-2,-9,-4,-5,7,-1,0)
+linha()
 maior(2,9,4,5,7,1)
 linha()
 maior(4,7,0)
